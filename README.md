@@ -22,15 +22,15 @@ def get_model(n_inputs, n_outputs):
 	net1Model=keras.models.Sequential()
 	net1Model.add(Dense(n_inputs,input_shape=(4,)))
 	net1Model.add(Dense(240))
-	net1Model.add(Activation('relu'))
+	net1Model.add(LeakyReLU(alpha=0.05))
 	net1Model.add(Dense(30))
-	net1Model.add(Activation('relu'))
+	net1Model.add(LeakyReLU(alpha=0.05))
 	net1Model.add(Dense(1024))
 	net1Model.add(Dense(n_outputs))
 	net1Model.compile(optimizer='Adam',loss='mse')
 	return net1Model
 
-model_forward.fit(X_train, y_train, verbose=0, epochs=500)
+model_forward.fit(X_train, y_train, verbose=0, epochs=900)
 ```
 high number of epochs of course may lead to overfitting. We check in the end of the notebook if this is the case. (it looks like its not unless there is a leakage that we dont understand)
 
@@ -42,29 +42,31 @@ The inverse architect that was used:
 # get the model
 def get_model(n_inputs, n_outputs):
     
-	net1Model=keras.models.Sequential()
 	net1Model.add(Dense(n_inputs))
-	#net1Model.add(Activation('relu'))
-	net1Model.add(Dense(240))
-	net1Model.add(Activation('relu'))
-	#net1Model.add(Dropout(0.5))
-	net1Model.add(Dense(30))
-	net1Model.add(Activation('relu'))
 	net1Model.add(Dense(1024))
-	net1Model.add(Dense(n_outputs))
-	net1Model.compile(optimizer='Adam',loss='mse')
+	net1Model.add(LeakyReLU(alpha=0.05))
+	net1Model.add(Dense(240))
+	net1Model.add(LeakyReLU(alpha=0.05))
+	net1Model.add(Dense(30))
+	net1Model.add(LeakyReLU(alpha=0.05))
     
 	return net1Model
 
-model.fit(X_train, y_train, verbose=0, epochs=700)
+model.fit(X_train, y_train, verbose=0, epochs=900)
 ```
 
 ## 2) Instalation
 
-#### 2.1) Requirements
+requirements and specifications: python 3.8+ (these steps have been checked in win11 os)
 
-#### 2.2) How to install
+Instalation steps:
 
+    1)Download and install python 3.8+
+    2)Clone this repo
+    3)Inside the repo run `pip install -r requirments.txt`
+    4)Use enviroment for notebooks (anaconda,vs studio etc.)
 
 ## 3) Running examples
+
+Example.ipynb contains the examples for running examples for the forward and inverse case
 
