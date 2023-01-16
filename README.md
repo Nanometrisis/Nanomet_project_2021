@@ -1,6 +1,19 @@
-The code is a bit messy. It is not for public to see hehe.
 
 
+## 1) General Information
+
+
+#+++++ 1.1) Project info
+
+
+#+++++ 1.2) Folders
+
+./data folder contains the data that was used to train and test the ML models.
+./notebooks contain the jupyter notebooks that were used to create the ML models. 
+        - *Nanomet_processing_and_modeling.ipynb* : Contains the basic model (neural network) allong with the train testing.
+        - *Nanomet_project_part2 (transfer learning).ipynb*: Contains a transfer learning approach. (this is not finished work)
+
+#### 1.3) Training information
 The forward model architect the was used:
 
 
@@ -45,4 +58,13 @@ def get_model(n_inputs, n_outputs):
 
 model.fit(X_train, y_train, verbose=0, epochs=700)
 ```
+
+## 2) Instalation
+
+#### 2.1) Requirements
+
+#### 2.2) How to install
+
+
+## 3) Running examples
 
