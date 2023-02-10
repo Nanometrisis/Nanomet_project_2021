@@ -5,16 +5,16 @@
 
 ### 1.1) Project info
 
-This project is the part of the Nanomet programm. The repo contains the data, code, trained models and running examples for the Nanomet diliverables.
+This project is the part of the Nanomet program. The repo contains the data, code, trained models and running examples for the Nanomet deliverables.
 
 ### 1.2) Folders
 
 * ./data folder contains the data that was used to train and test the ML models.
 * ./notebooks contain the jupyter notebooks that were used to create the ML models. 
-        - *Nanomet_processing_and_modeling.ipynb* : Contains the basic model (neural network) allong with the train testing.
+        - *Nanomet_processing_and_modeling.ipynb* : Contains the basic model (neural network) along with the train testing.
         - *Nanomet_project_part2 (transfer learning).ipynb*: Contains a transfer learning approach. (this is not finished work)
 
-* ./models cotnain the neural network keras models (forward and ivnerse). We have also the tflite versions of them.
+* ./models contain the neural network keras models (forward and inverse). We have also the tflite versions of them.
 * ./minmaxscalers contain the scripts for transforming the input (for forward) and output (for inverse) of the models.
 #### 1.3) Training information
 The forward model architect the was used:
@@ -35,7 +35,7 @@ def get_model(n_inputs, n_outputs):
 
 model_forward.fit(X_train, y_train, verbose=0, epochs=900)
 ```
-high number of epochs of course may lead to overfitting. We check in the end of the notebook if this is the case. (it looks like its not unless there is a leakage that we dont understand)
+high number of epochs of course may lead to overfitting. We check in the end of the notebook if this is the case. (it looks like its not unless there is a leakage that we don't understand)
 
 
 The inverse architect that was used:
@@ -62,12 +62,12 @@ model.fit(X_train, y_train, verbose=0, epochs=900)
 
 requirements and specifications: python 3.8+ (these steps have been checked in win11 os)
 
-Instalation steps:
+Installation steps:
 
     1)Download and install python 3.8+
     2)Clone this repo
-    3)Inside the repo run `pip install -r requirments.txt`
-    4)Use enviroment for notebooks (anaconda,vs studio etc.)
+    3)Inside the repo run `pip install -r requirements.txt`
+    4)Use environment for notebooks (anaconda,vs studio etc.)
 	5)Open Example.ipynb to run the examples
 
 ## 3) Running examples
