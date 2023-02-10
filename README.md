@@ -3,8 +3,9 @@
 ## 1) General Information
 
 
-### +++++ 1.1) Project info
+### 1.1) Project info
 
+This project is the part of the Nanomet programm. The repo contains the data, code, trained models and running examples for the Nanomet diliverables.
 
 ### 1.2) Folders
 
