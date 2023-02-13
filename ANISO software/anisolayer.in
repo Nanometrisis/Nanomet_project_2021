@@ -1,0 +1,14 @@
+1000, 1.458, 2.755                           ! np,omega_start,omega_end in eV0.0d0
+0.0d0                                  ! theta in deg
+3                                       ! number of layers (lines to follow)
+1,  0.0  , AIR                          ! layer-type, thickness(um), material
+3,  0.3d0  , 0.20d0 ,  0.1 , SI12, AIR       ! layer-type=3,thickness(um),pitch(um), linewidth, mat1(linewidth),mat2(outside)
+1,  0.0d0  , SUB
+-----------------------------------------------------
+---------- MATERIALS DATA ---- use * as first character in line
+---------- files should be 3 rows, ev, ni, kappa.
+--------------------------------------------------   
+*AIR          ,  C             , 1.d0    , 0.d0
+*SI12         ,  C             , 1.5d0    , 0.d0
+*SUB         ,  C              , 1.5d0    , 0.d0
+
